@@ -1,11 +1,19 @@
 module.exports = {
   siteMetadata: {
-    title: `new`,
+    title: `mi sitio web en gatsby`,
     siteUrl: `https://www.yourdomain.tld`,
+    author: "Castillo Luis"
   },
   plugins: [
     "gatsby-plugin-image",
     "gatsby-plugin-sharp",
-    "gatsby-plugin-filesystem"
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blog',
+        path: `${__dirname}/blog`,
+        ignore: ['**/\.*']
+      }
+    }
   ],
 }
